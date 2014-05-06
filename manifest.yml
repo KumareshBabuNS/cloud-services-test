@@ -1,0 +1,12 @@
+applications:
+- name: cloud-services-test
+  memory: 1024M
+  instances: 1
+  host: cloud-services-test-${random-word}
+  domain: cfapps.io
+  path: target/cloud-1.0.0.BUILD-SNAPSHOT.war
+  services:
+    - mysql-service
+    - postgres-service
+    - mongolab-service
+    - amqp-service
