@@ -9,4 +9,5 @@ applications:
     - mysql-service
     - postgres-service
     - mongolab-service
-    - amqp-service
+    - cloudamqp-service
+    - rediscloud-service

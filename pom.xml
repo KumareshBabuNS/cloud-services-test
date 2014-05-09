@@ -10,14 +10,17 @@
 	<properties>
 		<java-version>1.6</java-version>
 		<org.springframework-version>4.0.2.RELEASE</org.springframework-version>
-		<spring-cloud.version>0.9.9.BUILD-SNAPSHOT</spring-cloud.version>
+		<spring-cloud.version>0.9.11.BUILD-SNAPSHOT</spring-cloud.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<jackson.version>2.2.2</jackson.version>	
 		
 		<spring.amqp.version>1.3.2.RELEASE</spring.amqp.version>
-		<spring-data-redis.version>1.2.1.RELEASE</spring-data-redis.version>
+		<spring-data-redis.version>1.1.1.RELEASE</spring-data-redis.version>
 		<spring-data-mongo.version>1.4.2.RELEASE</spring-data-mongo.version>
+		<jedis.version>2.0.0</jedis.version>
+		
+		<commonDbcp.version>1.4</commonDbcp.version>
 		
 		<mysql-driver.version>5.0.5</mysql-driver.version>
 		<postgres-driver.version>9.0-801.jdbc4</postgres-driver.version>		
@@ -64,12 +67,7 @@
 			<version>${spring-cloud.version}</version>
 		</dependency>
 
-<!--  		<dependency>
-			<groupId>org.springframework.amqp</groupId>
-			<artifactId>spring-rabbit</artifactId>
-			<version>${spring.amqp.version}</version>
-		</dependency>
- -->		<dependency>
+		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-redis</artifactId>
 			<version>${spring-data-redis.version}</version>
@@ -80,6 +78,16 @@
 					<artifactId>spring-context-support</artifactId>
 				</exclusion>
 			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
+		</dependency>
+		<dependency>
+			<artifactId>commons-dbcp</artifactId>
+			<groupId>commons-dbcp</groupId>
+			<version>${commonDbcp.version}</version>
 		</dependency>
 
 		<dependency>
@@ -178,13 +186,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		
-		<dependency>
-			<groupId>commons-dbcp</groupId>
-			<artifactId>commons-dbcp</artifactId>
-			<version>1.3</version>
-			<scope>runtime</scope>
-		</dependency>
-
 		<!-- @Inject -->
 		<dependency>
 			<groupId>javax.inject</groupId>
@@ -219,6 +220,17 @@
 			<scope>test</scope>
 		</dependency>        
 	</dependencies>
+	
+	<repositories>
+		<repository>
+			<id>spring-repo-milestone</id>
+			<url>http://repo.spring.io/milestone</url>
+		</repository>
+		<repository>
+			<id>spring-repo-snapshot</id>
+			<url>http://repo.spring.io/snapshot</url>
+		</repository>
+	</repositories>
     <build>
         <plugins>
             <plugin>
