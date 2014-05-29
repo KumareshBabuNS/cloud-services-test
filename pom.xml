@@ -10,7 +10,7 @@
 	<properties>
 		<java-version>1.6</java-version>
 		<org.springframework-version>4.0.2.RELEASE</org.springframework-version>
-		<spring-cloud.version>0.9.12.BUILD-SNAPSHOT</spring-cloud.version>
+		<spring-cloud.version>1.0.0.BUILD-SNAPSHOT</spring-cloud.version>
 		<org.aspectj-version>1.6.10</org.aspectj-version>
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 		<jackson.version>2.2.2</jackson.version>	
